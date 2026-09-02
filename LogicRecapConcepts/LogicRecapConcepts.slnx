@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/31/">
+    <Project Path="LowerTriangularMatrix/LowerTriangularMatrix.csproj" />
+  </Folder>
+  <Folder Name="/34/">
+    <Project Path="MatrixHourglass/MatrixHourglass.csproj" />
+  </Folder>
+</Solution>
