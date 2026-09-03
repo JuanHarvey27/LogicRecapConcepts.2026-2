@@ -22,5 +22,34 @@ class Program
         }
 
         // Show the complete original matrix
+        Console.WriteLine("\nORIGINAL MATRIX:");
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                Console.Write($"{matrix[i, j],-4}");
+            }
+            Console.WriteLine();
+        }
+        // Show the hourglass matrix
+        Console.WriteLine("\nHOURGLASS MATRIX:");
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                // Requirements for being within the hourglass
+                bool isHourglass = (j >= i && j <= n - 1 - i) || (j <= i && j >= n - 1 - i);
+                if (isHourglass)
+                {
+                    Console.Write($"{matrix[i, j],-4}");
+                }
+                else
+                {
+                    // Print 4 blanks spaces if it's outside the clock
+                    Console.Write("    ");
+                }
+            }
+            Console.WriteLine();
+        }
     }
 }

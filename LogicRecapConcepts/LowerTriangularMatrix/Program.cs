@@ -25,7 +25,7 @@ class Program
         {
             for (int j = 0; j < n; j++)
             {
-                Console.Write(matrix[i, j] + "\t");
+                Console.Write($"{matrix[i, j],-4}");
             }
             Console.WriteLine();
         }
@@ -38,7 +38,7 @@ class Program
         {
             for (int j = 0; j <= i; j++)
             {
-                Console.Write(matrix[i, j] + "\t");
+                Console.Write($"{matrix[i, j],-4}");
             }
             Console.WriteLine();
         }
