@@ -5,4 +5,7 @@
   <Folder Name="/34/">
     <Project Path="MatrixHourglass/MatrixHourglass.csproj" />
   </Folder>
+  <Folder Name="/Shared/">
+    <Project Path="ConsoleExtension/Shared.csproj" Id="adfbdf33-81e1-4d2e-bdd8-cdd868f8e1f3" />
+  </Folder>
 </Solution>

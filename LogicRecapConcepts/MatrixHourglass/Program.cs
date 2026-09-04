@@ -1,16 +1,17 @@
-﻿using System;
+﻿using Shared;
 
-class Program
+var answer = string.Empty;
+var options = new List<string> { "s", "n" };
+
+do
 {
-    static void Main()
+    var n = ConsoleExtension.GetInt("Please enter an integer other than zero: ");
+    if (n == 0)
     {
-        Console.WriteLine("Enter the order of the matrix:");
-        int n;
-        while (!int.TryParse(Console.ReadLine(), out n) || n <= 0 || n % 2 == 0)
-        {
-            Console.WriteLine("Please enter a valid positive odd integer:");
-        }
-
+        continue;
+    }
+    else
+    {
         // This is the part responsible for creating the matrix using the formula: Matrix[i, j] = 2*i + j
         int[,] matrix = new int[n, n];
         for (int i = 0; i < n; i++)
@@ -52,4 +53,13 @@ class Program
             Console.WriteLine();
         }
     }
-}
+
+    do
+    {
+        answer = ConsoleExtension.GetValidOptions("¿Deseas continuar [S]í, [N]o?: ", options);
+    } while (!options.Any(x => x.Equals(answer, StringComparison.CurrentCultureIgnoreCase)));
+
+} while (answer!.Equals("s", StringComparison.CurrentCultureIgnoreCase));
+
+
+      

@@ -1,23 +1,24 @@
-﻿using System;
+﻿using Shared;
 
-class Program
+var answer = string.Empty;
+var options = new List<string> { "s", "n" };
+
+do
 {
-    static void Main()
+    var n = ConsoleExtension.GetInt("Please enter an integer other than zero: ");
+    if (n == 0)
     {
-        Console.WriteLine("Enter the order of the matrix:");
-        int n;
-        while (!int.TryParse(Console.ReadLine(), out n) || n <= 0)
-        {
-            Console.WriteLine("Invalid input. Please enter a valid positive integer:");
-        }
-
+        continue;
+    }
+    else
+    {
         // The part responsible for creating the matrix
         int[,] matrix = new int[n, n];
         for (int i = 0; i < n; i++)
         {
             for (int j = 0; j < n; j++)
             {
-                matrix[i,j] = i+ j;    
+                matrix[i, j] = i + j;
             }
         }
 
@@ -43,4 +44,13 @@ class Program
             Console.WriteLine();
         }
     }
-}
+
+    do
+    {
+        answer = ConsoleExtension.GetValidOptions("¿Deseas continuar [S]í, [N]o?: ", options);
+    } while (!options.Any(x => x.Equals(answer, StringComparison.CurrentCultureIgnoreCase)));
+} while (answer!.Equals("s", StringComparison.CurrentCultureIgnoreCase));
+
+
+        
+ 
